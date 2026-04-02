@@ -99,7 +99,8 @@ async def dreamxbotz_start():
                 chat_id=LOG_CHANNEL, 
                 text=script.RESTART_TXT.format(temp.B_LINK, date.today(), time_now)
             )
-        except: pass
+        except: 
+            pass
 
     # Web Server Setup (Render Port Binding)
     try:
