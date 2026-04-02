@@ -17,9 +17,9 @@ asyncio.set_event_loop_policy(uvloop.EventLoopPolicy())
 
 # --- STEP 2: Kurigram Imports (Replacing Pyrogram/Hydrogram) ---
 from pyrogram import Client, idle, __version__
-from kurigram.raw.all import layer
-from kurigram.errors import FloodWait
-import kurigram.utils
+from pyrogram.raw.all import layer
+from pyrogram.errors import FloodWait
+import pyrogram.utils
 
 # Database & Config Imports
 from database.ia_filterdb import Media, Media2
@@ -37,13 +37,13 @@ Image.MAX_IMAGE_PIXELS = 500_000_000
 
 # Logging Configuration
 logging.config.fileConfig('logging.conf')
-logging.getLogger("kurigram").setLevel(logging.ERROR)
+logging.getLogger("pyrogram").setLevel(logging.ERROR)
 logging.getLogger("imdbpy").setLevel(logging.ERROR)
 logging.getLogger("aiohttp").setLevel(logging.ERROR)
 logging.getLogger("pymongo").setLevel(logging.WARNING)
 
 botStartTime = time.time()
-kurigram.utils.MIN_CHANNEL_ID = -1009147483647
+pyrogram.utils.MIN_CHANNEL_ID = -1009147483647
 
 async def dreamxbotz_start():
     print('\n🚀 Initializing DreamxBotz on Kurigram...')
